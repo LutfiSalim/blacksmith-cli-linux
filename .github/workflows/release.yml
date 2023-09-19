@@ -1,23 +1,31 @@
-name: Release .deb package
+name: Publish Debian Package
 
 on:
-  push:
-    tags:
-      - 'v*'
+  release:
+    types:
+      - published
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Build DEB package
-        run: dpkg-deb --build my_package
+      - name: Set up Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
-      - name: Upload DEB package to release
-        uses: actions/upload-release-asset@v3
-        with:
-          upload_url: ${{ github.release.upload_url }}
-          asset_name: blacksmith-cli-linux.deb
-          asset_path: blacksmith-cli-linux.deb
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dpkg
+
+      - name: Publish Package to GitHub Packages
+        run: |
+          echo "Publishing Debian package to GitHub Packages"
+          dpkg -i ./blacksmith-cli-linux.deb
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        timeout-minutes: 15
