@@ -27,7 +27,6 @@ jobs:
       - name: Publish Package to GitHub Packages
         run: |
           echo "Publishing Debian package to GitHub Packages"
-          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
           gh pkg publish ./blacksmith-cli-linux.deb
         env:
           DEBIAN_FRONTEND: noninteractive
