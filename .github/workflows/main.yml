@@ -1,0 +1,26 @@
+name: Publish Debian Package for x86_64
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      ARCH: amd64
+
+    steps:
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y glibc
+
+      - name: Publish Package to GitHub Packages
+        run: |
+          echo "Publishing Debian package to GitHub Packages for x86_64"
+          sudo dpkg -i blacksmith-cli-${ARCH}.deb
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        timeout-minutes: 15
