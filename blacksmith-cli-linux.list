@@ -1,1 +1,1 @@
-deb [trusted=yes] https://github.com/LutfiSalim/blacksmith-cli-linux/releases/ blacksmith-cli-linux main
+deb [trusted=yes] https://github.com/LutfiSalim/blacksmith-cli-linux/ blacksmith-cli-linux main
