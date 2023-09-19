@@ -1,0 +1,23 @@
+name: Release .deb package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build DEB package
+        run: dpkg-deb --build my_package
+
+      - name: Upload DEB package to release
+        uses: actions/upload-release-asset@v3
+        with:
+          upload_url: ${{ github.release.upload_url }}
+          asset_name: blacksmith-cli-linux.deb
+          asset_path: blacksmith-cli-linux.deb
