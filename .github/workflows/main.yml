@@ -28,7 +28,7 @@ jobs:
       - name: Publish Package to GitHub Packages
         run: |
           echo "Publishing Debian package to GitHub Packages for x86_64"
-          sudo dpkg -i ./blacksmith-cli-${ARCH}.deb
+          sudo dpkg -i blacksmith-cli-${ARCH}.deb
         env:
           DEBIAN_FRONTEND: noninteractive
         timeout-minutes: 15
