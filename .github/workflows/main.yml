@@ -25,7 +25,8 @@ jobs:
       - name: Publish Package to GitHub Packages
         run: |
           echo "Publishing Debian package to GitHub Packages"
-          dpkg -i ./blacksmith-cli-linux.deb
+          # Use sudo to run dpkg with superuser privileges
+          sudo dpkg -i ./blacksmith-cli-linux.deb
         env:
           DEBIAN_FRONTEND: noninteractive
         timeout-minutes: 15
