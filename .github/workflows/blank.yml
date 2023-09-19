@@ -1,33 +1,22 @@
-name: Publish Debian Package
+name: Build and publish Debian package
 
 on:
-  release:
-    types:
-      - published
+  push:
+    branches:
+      - main
 
 jobs:
-  publish:
+  build-deb:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Set up Git
-        run: |
-          git config user.name "$GITHUB_ACTOR"
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+      - name: Build Debian package
+        run: dpkg-buildpackage -b
 
-      - name: Install GitHub CLI
-        run: |
-          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
-          echo "deb [arch=all signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-          sudo apt-get update
-          sudo apt-get install gh
-
-      - name: Publish Package to GitHub Packages
-        run: |
-          echo "Publishing Debian package to GitHub Packages"
-          gh pkg publish ./blacksmith-cli-linux.deb
-        env:
-          DEBIAN_FRONTEND: noninteractive
-        timeout-minutes: 15
+      - name: Publish Debian package
+        uses: actions/upload-artifact@v3
+        with:
+          name: debian-package
+          path: ./debian-pkg/*.deb
