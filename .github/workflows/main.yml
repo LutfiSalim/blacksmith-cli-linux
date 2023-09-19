@@ -17,11 +17,16 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dpkg
+
       - name: Publish Package to GitHub Packages
         run: |
           echo "Publishing Debian package to GitHub Packages"
-          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
-          gh pkg publish ./blacksmith-cli-linux.deb
+          # Replace with the actual command to publish your package using dpkg or apt
+          dpkg -i ./blacksmith-cli-linux.deb
         env:
           DEBIAN_FRONTEND: noninteractive
         timeout-minutes: 15
