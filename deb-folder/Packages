@@ -1,6 +1,6 @@
 Package: blacksmith-cli-linux
 Version: 1.0
-Architecture: all
+Architecture: amd64
 Maintainer: Ahmad Lutfi bin Salim <matluthfi17@gmail.com>
 Filename: deb-folder/blacksmith-cli-linux.deb
 Size: 29339160
