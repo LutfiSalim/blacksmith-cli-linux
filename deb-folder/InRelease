@@ -1,0 +1,29 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Archive: https://github.com/blacksmithdata/mylinux-cli/
+Origin: github.com
+Label: mylinux-cli
+Suite: deb-folder/
+Codename: deb-folder/
+Architectures: amd64
+Components: main
+Description: Blacksmith CLI App
+MD5sum: 215731dcc3dccd197ef15f33448f5db0
+SHA1: 1fb3b331486b882f2969ad4aeae107d48f121a4b
+SHA256: e85cdc641e6107c87afc09a6565d522fc1ca3a2620828b1f5ae32701ea30452d
+Date: Thu, 26 Sep 2023 19:47:56 UTC
+-----BEGIN PGP SIGNATURE-----
+
+iQGyBAEBCgAdFiEEYBauwR2lrLMAm4NC3Lg+DDQEAp8FAmUWa4YACgkQ3Lg+DDQE
+Ap+w8gv2LLlskli8NYMB8qQWZIZUcLG76kii6ZiQIUsm1mdrSNaEBZf7J4h5wXaE
+hPlnzgJC5h9gz7Y5nEBLrCrsGXiCHWU7RINCQY9JqaxZt++eVrHD0gZDhqvzbXzZ
+edLgLgJ3o8hsUmvOsO4O+aBBetvQMijPO5tk6HaJBzG5sayQ05g1fUcHZ8atfuWv
+giSXvd2wRtEImdu0O2O1g2mq/4Skz5w/LdfLoN6joiBXZJL4kr3HyCX1LA3F2ii+
+usT1zpH+1Oj06svIqLi3PpI8hPeHYX4ayqg8VBQn3gsAlf9PWJbLuD/Z+rvYz+Y8
+bWfs8WGPrSTgGuJBPd0io5OP7OTLrSAPESVBBi2xVJ7w8gaRexJGgBBnjirD6wJZ
+tt74+Sn3Oqr1dgsjTcWnSfG9dnmJ7xg1tFmcqvjlesRZL6StYha206Lo5Ayqjhrl
+ct1OAxQh4Qqtf5mJWumxZBj2GfKQpIy81XIY0Mn6aeHTnfClb07g09zbCLRogM0w
+jZyw7Yc=
+=77Ak
+-----END PGP SIGNATURE-----
