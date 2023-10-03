@@ -1,0 +1,11 @@
+Package: blacksmith-cli-linux
+Version: 3.0
+Architecture: all
+Maintainer: Ahmad Lutfi bin Salim <matluthfi17@gmail.com>
+Filename: deb-folder/blacksmith-cli-linux.deb
+Size: 29339136
+MD5sum: 384cbb45061e1b254ee8e2cc676642de
+SHA1: 6b48a86ac2fa1e6bec2b34f1cb2b5694e4218999
+SHA256: daf29274ddbf3dc3bd59235cb4b2266a6bf313b1e9162f17e4ae68c5a6772669
+Description: Description of my package
+
